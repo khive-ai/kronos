@@ -272,7 +272,7 @@ class TestHashObj:
         # The current _generate_hashable_representation is designed to always return hashable tuples/primitives.
         # To test this, we would need to mock _generate_hashable_representation.
         # NOTE: This test is for hash_obj, not compute_hash (which uses JSON serialization).
-        import kron.utils._hash as hash_module
+        import kronos.utils._hash as hash_module
 
         original_generator = hash_module._generate_hashable_representation
         try:
