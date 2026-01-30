@@ -10,46 +10,46 @@ from typing import TYPE_CHECKING
 # Lazy import mapping
 _LAZY_IMPORTS: dict[str, tuple[str, str]] = {
     # broadcaster
-    "Broadcaster": ("kron.core.broadcaster", "Broadcaster"),
+    "Broadcaster": ("kronos.core.broadcaster", "Broadcaster"),
     # element
-    "Element": ("kron.core.element", "Element"),
+    "Element": ("kronos.core.element", "Element"),
     # event
-    "Event": ("kron.core.event", "Event"),
-    "EventStatus": ("kron.core.event", "EventStatus"),
-    "Execution": ("kron.core.event", "Execution"),
+    "Event": ("kronos.core.event", "Event"),
+    "EventStatus": ("kronos.core.event", "EventStatus"),
+    "Execution": ("kronos.core.event", "Execution"),
     # eventbus
-    "EventBus": ("kron.core.eventbus", "EventBus"),
-    "Handler": ("kron.core.eventbus", "Handler"),
+    "EventBus": ("kronos.core.eventbus", "EventBus"),
+    "Handler": ("kronos.core.eventbus", "Handler"),
     # flow
-    "Flow": ("kron.core.flow", "Flow"),
+    "Flow": ("kronos.core.flow", "Flow"),
     # graph
-    "Edge": ("kron.core.graph", "Edge"),
-    "EdgeCondition": ("kron.core.graph", "EdgeCondition"),
-    "Graph": ("kron.core.graph", "Graph"),
+    "Edge": ("kronos.core.graph", "Edge"),
+    "EdgeCondition": ("kronos.core.graph", "EdgeCondition"),
+    "Graph": ("kronos.core.graph", "Graph"),
     # node
-    "DEFAULT_NODE_CONFIG": ("kron.core.node", "DEFAULT_NODE_CONFIG"),
-    "NODE_REGISTRY": ("kron.core.node", "NODE_REGISTRY"),
-    "PERSISTABLE_NODE_REGISTRY": ("kron.core.node", "PERSISTABLE_NODE_REGISTRY"),
-    "Node": ("kron.core.node", "Node"),
-    "NodeConfig": ("kron.core.node", "NodeConfig"),
-    "create_node": ("kron.core.node", "create_node"),
-    "generate_ddl": ("kron.core.node", "generate_ddl"),
+    "DEFAULT_NODE_CONFIG": ("kronos.core.node", "DEFAULT_NODE_CONFIG"),
+    "NODE_REGISTRY": ("kronos.core.node", "NODE_REGISTRY"),
+    "PERSISTABLE_NODE_REGISTRY": ("kronos.core.node", "PERSISTABLE_NODE_REGISTRY"),
+    "Node": ("kronos.core.node", "Node"),
+    "NodeConfig": ("kronos.core.node", "NodeConfig"),
+    "create_node": ("kronos.core.node", "create_node"),
+    "generate_ddl": ("kronos.core.node", "generate_ddl"),
     # phrase
-    "PHRASE_REGISTRY": ("kron.core.phrase", "PHRASE_REGISTRY"),
-    "Phrase": ("kron.core.phrase", "Phrase"),
-    "PhraseConfig": ("kron.core.phrase", "PhraseConfig"),
-    "PhraseError": ("kron.core.phrase", "PhraseError"),
-    "RequirementNotMet": ("kron.core.phrase", "RequirementNotMet"),
-    "create_phrase": ("kron.core.phrase", "create_phrase"),
-    "get_phrase": ("kron.core.phrase", "get_phrase"),
-    "list_phrases": ("kron.core.phrase", "list_phrases"),
+    "PHRASE_REGISTRY": ("kronos.core.phrase", "PHRASE_REGISTRY"),
+    "Phrase": ("kronos.core.phrase", "Phrase"),
+    "PhraseConfig": ("kronos.core.phrase", "PhraseConfig"),
+    "PhraseError": ("kronos.core.phrase", "PhraseError"),
+    "RequirementNotMet": ("kronos.core.phrase", "RequirementNotMet"),
+    "create_phrase": ("kronos.core.phrase", "create_phrase"),
+    "get_phrase": ("kronos.core.phrase", "get_phrase"),
+    "list_phrases": ("kronos.core.phrase", "list_phrases"),
     # pile
-    "Pile": ("kron.core.pile", "Pile"),
+    "Pile": ("kronos.core.pile", "Pile"),
     # processor
-    "Executor": ("kron.core.processor", "Executor"),
-    "Processor": ("kron.core.processor", "Processor"),
+    "Executor": ("kronos.core.processor", "Executor"),
+    "Processor": ("kronos.core.processor", "Processor"),
     # progression
-    "Progression": ("kron.core.progression", "Progression"),
+    "Progression": ("kronos.core.progression", "Progression"),
 }
 
 _LOADED: dict[str, object] = {}
@@ -69,7 +69,7 @@ def __getattr__(name: str) -> object:
         _LOADED[name] = value
         return value
 
-    raise AttributeError(f"module 'kron.core' has no attribute {name!r}")
+    raise AttributeError(f"module 'kronos.core' has no attribute {name!r}")
 
 
 def __dir__() -> list[str]:

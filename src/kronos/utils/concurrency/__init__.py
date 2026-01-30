@@ -37,63 +37,63 @@ from typing import TYPE_CHECKING
 
 _LAZY_IMPORTS: dict[str, tuple[str, str]] = {
     # _cancel
-    "CancelScope": ("kron.utils.concurrency._cancel", "CancelScope"),
-    "effective_deadline": ("kron.utils.concurrency._cancel", "effective_deadline"),
-    "fail_after": ("kron.utils.concurrency._cancel", "fail_after"),
-    "fail_at": ("kron.utils.concurrency._cancel", "fail_at"),
-    "move_on_after": ("kron.utils.concurrency._cancel", "move_on_after"),
-    "move_on_at": ("kron.utils.concurrency._cancel", "move_on_at"),
+    "CancelScope": ("kronos.utils.concurrency._cancel", "CancelScope"),
+    "effective_deadline": ("kronos.utils.concurrency._cancel", "effective_deadline"),
+    "fail_after": ("kronos.utils.concurrency._cancel", "fail_after"),
+    "fail_at": ("kronos.utils.concurrency._cancel", "fail_at"),
+    "move_on_after": ("kronos.utils.concurrency._cancel", "move_on_after"),
+    "move_on_at": ("kronos.utils.concurrency._cancel", "move_on_at"),
     # _errors
     "get_cancelled_exc_class": (
-        "kron.utils.concurrency._errors",
+        "kronos.utils.concurrency._errors",
         "get_cancelled_exc_class",
     ),
-    "is_cancelled": ("kron.utils.concurrency._errors", "is_cancelled"),
+    "is_cancelled": ("kronos.utils.concurrency._errors", "is_cancelled"),
     "non_cancel_subgroup": (
-        "kron.utils.concurrency._errors",
+        "kronos.utils.concurrency._errors",
         "non_cancel_subgroup",
     ),
-    "shield": ("kron.utils.concurrency._errors", "shield"),
+    "shield": ("kronos.utils.concurrency._errors", "shield"),
     # _patterns
-    "CompletionStream": ("kron.utils.concurrency._patterns", "CompletionStream"),
-    "bounded_map": ("kron.utils.concurrency._patterns", "bounded_map"),
-    "gather": ("kron.utils.concurrency._patterns", "gather"),
-    "race": ("kron.utils.concurrency._patterns", "race"),
-    "retry": ("kron.utils.concurrency._patterns", "retry"),
+    "CompletionStream": ("kronos.utils.concurrency._patterns", "CompletionStream"),
+    "bounded_map": ("kronos.utils.concurrency._patterns", "bounded_map"),
+    "gather": ("kronos.utils.concurrency._patterns", "gather"),
+    "race": ("kronos.utils.concurrency._patterns", "race"),
+    "retry": ("kronos.utils.concurrency._patterns", "retry"),
     # _primitives
-    "CapacityLimiter": ("kron.utils.concurrency._primitives", "CapacityLimiter"),
-    "Condition": ("kron.utils.concurrency._primitives", "Condition"),
-    "Event": ("kron.utils.concurrency._primitives", "Event"),
-    "Lock": ("kron.utils.concurrency._primitives", "Lock"),
-    "Queue": ("kron.utils.concurrency._primitives", "Queue"),
-    "Semaphore": ("kron.utils.concurrency._primitives", "Semaphore"),
+    "CapacityLimiter": ("kronos.utils.concurrency._primitives", "CapacityLimiter"),
+    "Condition": ("kronos.utils.concurrency._primitives", "Condition"),
+    "Event": ("kronos.utils.concurrency._primitives", "Event"),
+    "Lock": ("kronos.utils.concurrency._primitives", "Lock"),
+    "Queue": ("kronos.utils.concurrency._primitives", "Queue"),
+    "Semaphore": ("kronos.utils.concurrency._primitives", "Semaphore"),
     # _priority_queue
-    "PriorityQueue": ("kron.utils.concurrency._priority_queue", "PriorityQueue"),
-    "QueueEmpty": ("kron.utils.concurrency._priority_queue", "QueueEmpty"),
-    "QueueFull": ("kron.utils.concurrency._priority_queue", "QueueFull"),
+    "PriorityQueue": ("kronos.utils.concurrency._priority_queue", "PriorityQueue"),
+    "QueueEmpty": ("kronos.utils.concurrency._priority_queue", "QueueEmpty"),
+    "QueueFull": ("kronos.utils.concurrency._priority_queue", "QueueFull"),
     # _resource_tracker
-    "LeakInfo": ("kron.utils.concurrency._resource_tracker", "LeakInfo"),
-    "LeakTracker": ("kron.utils.concurrency._resource_tracker", "LeakTracker"),
+    "LeakInfo": ("kronos.utils.concurrency._resource_tracker", "LeakInfo"),
+    "LeakTracker": ("kronos.utils.concurrency._resource_tracker", "LeakTracker"),
     "track_resource": (
-        "kron.utils.concurrency._resource_tracker",
+        "kronos.utils.concurrency._resource_tracker",
         "track_resource",
     ),
     "untrack_resource": (
-        "kron.utils.concurrency._resource_tracker",
+        "kronos.utils.concurrency._resource_tracker",
         "untrack_resource",
     ),
     # _run_async
-    "run_async": ("kron.utils.concurrency._run_async", "run_async"),
+    "run_async": ("kronos.utils.concurrency._run_async", "run_async"),
     # _task
-    "TaskGroup": ("kron.utils.concurrency._task", "TaskGroup"),
-    "create_task_group": ("kron.utils.concurrency._task", "create_task_group"),
+    "TaskGroup": ("kronos.utils.concurrency._task", "TaskGroup"),
+    "create_task_group": ("kronos.utils.concurrency._task", "create_task_group"),
     # _utils
-    "current_time": ("kron.utils.concurrency._utils", "current_time"),
-    "is_coro_func": ("kron.utils.concurrency._utils", "is_coro_func"),
-    "run_sync": ("kron.utils.concurrency._utils", "run_sync"),
-    "sleep": ("kron.utils.concurrency._utils", "sleep"),
-    "alcall": ("kron.utils.concurrency._async_call", "alcall"),
-    "bcall": ("kron.utils.concurrency._async_call", "bcall"),
+    "current_time": ("kronos.utils.concurrency._utils", "current_time"),
+    "is_coro_func": ("kronos.utils.concurrency._utils", "is_coro_func"),
+    "run_sync": ("kronos.utils.concurrency._utils", "run_sync"),
+    "sleep": ("kronos.utils.concurrency._utils", "sleep"),
+    "alcall": ("kronos.utils.concurrency._async_call", "alcall"),
+    "bcall": ("kronos.utils.concurrency._async_call", "bcall"),
 }
 
 _LOADED: dict[str, object] = {}
@@ -122,7 +122,7 @@ def __getattr__(name: str) -> object:
         _LOADED[name] = value
         return value
 
-    raise AttributeError(f"module 'kron.utils.concurrency' has no attribute {name!r}")
+    raise AttributeError(f"module 'kronos.utils.concurrency' has no attribute {name!r}")
 
 
 def __dir__() -> list[str]:

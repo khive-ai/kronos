@@ -18,18 +18,18 @@ from typing import TYPE_CHECKING
 
 # Lazy import mapping
 _LAZY_IMPORTS: dict[str, tuple[str, str]] = {
-    "Calling": ("kron.services.backend", "Calling"),
-    "NormalizedResponse": ("kron.services.backend", "NormalizedResponse"),
-    "ServiceBackend": ("kron.services.backend", "ServiceBackend"),
-    "ServiceConfig": ("kron.services.backend", "ServiceConfig"),
-    "ServiceRegistry": ("kron.services.registry", "ServiceRegistry"),
-    "iModel": ("kron.services.imodel", "iModel"),
-    "Endpoint": ("kron.services.endpoint", "Endpoint"),
-    "EndpointConfig": ("kron.services.endpoint", "EndpointConfig"),
-    "APICalling": ("kron.services.endpoint", "APICalling"),
-    "HookRegistry": ("kron.services.hook", "HookRegistry"),
-    "HookEvent": ("kron.services.hook", "HookEvent"),
-    "HookPhase": ("kron.services.hook", "HookPhase"),
+    "Calling": ("kronos.services.backend", "Calling"),
+    "NormalizedResponse": ("kronos.services.backend", "NormalizedResponse"),
+    "ServiceBackend": ("kronos.services.backend", "ServiceBackend"),
+    "ServiceConfig": ("kronos.services.backend", "ServiceConfig"),
+    "ServiceRegistry": ("kronos.services.registry", "ServiceRegistry"),
+    "iModel": ("kronos.services.imodel", "iModel"),
+    "Endpoint": ("kronos.services.endpoint", "Endpoint"),
+    "EndpointConfig": ("kronos.services.endpoint", "EndpointConfig"),
+    "APICalling": ("kronos.services.endpoint", "APICalling"),
+    "HookRegistry": ("kronos.services.hook", "HookRegistry"),
+    "HookEvent": ("kronos.services.hook", "HookEvent"),
+    "HookPhase": ("kronos.services.hook", "HookPhase"),
 }
 
 _LOADED: dict[str, object] = {}
@@ -49,7 +49,7 @@ def __getattr__(name: str) -> object:
         _LOADED[name] = value
         return value
 
-    raise AttributeError(f"module 'kron.services' has no attribute {name!r}")
+    raise AttributeError(f"module 'kronos.services' has no attribute {name!r}")
 
 
 def __dir__() -> list[str]:

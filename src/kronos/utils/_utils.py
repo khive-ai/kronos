@@ -188,7 +188,7 @@ def is_import_installed(package_name: str) -> bool:
 
 _TYPE_CACHE: dict[str, type] = {}
 
-_DEFAULT_ALLOWED_PREFIXES: frozenset[str] = frozenset({"kron."})
+_DEFAULT_ALLOWED_PREFIXES: frozenset[str] = frozenset({"kronos."})
 _ALLOWED_MODULE_PREFIXES: set[str] = set(_DEFAULT_ALLOWED_PREFIXES)
 
 
@@ -210,7 +210,7 @@ def register_type_prefix(prefix: str) -> None:
 
 
 def load_type_from_string(type_str: str) -> type:
-    """Load type from fully qualified path (e.g., 'kron.core.Node').
+    """Load type from fully qualified path (e.g., 'kronos.core.Node').
 
     Security: Only allowlisted module prefixes can be loaded.
 

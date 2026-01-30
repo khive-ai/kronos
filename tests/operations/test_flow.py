@@ -509,7 +509,7 @@ class TestFlowVerbose:
         graph = Graph()
         graph.add_node(op)
 
-        with caplog.at_level(logging.DEBUG, logger="kron.operations.flow"):
+        with caplog.at_level(logging.DEBUG, logger="kronos.operations.flow"):
             await flow(session, graph, branch=branch, verbose=True)
 
         # Should have logged execution messages
